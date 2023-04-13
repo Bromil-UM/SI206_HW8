@@ -51,11 +51,13 @@ def plot_rest_categories(db):
     for item in lst:
         keys.append(item[0])
         nums.append(item[1])
-    plt.barh(keys,nums)
+    plt.subplot(1,1,1)
+    plt.barh(keys,nums,)
     plt.xlabel("Number of resturaunts")
     plt.ylabel("Category")
     plt.title("Resturaunts per Category in Ann Arbor")
-    plt.show()
+    plt.tight_layout()
+    plt.savefig('RestCats.png')
     cur.close()
     return d
 
